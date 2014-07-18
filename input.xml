@@ -1,0 +1,58 @@
+<object>
+	<name>ventilatore</name>
+	<id>987532</id>
+	<pins>
+		<pin>
+			<number>2</number>
+			<value>0</value>
+			<mode>OUTPUT</mode>
+		</pin>
+		<pin>
+			<number>3</number>
+			<value>0</value>
+			<mode>OUTPUT</mode>
+		</pin>
+	</pins>
+	<variables>
+		<variable>
+			<variabletype>int</variabletype>
+			<variablename>buttonState</variablename>
+			<variablevalue>0</variablevalue>
+		</variable>
+		<variable>
+			<variabletype>int</variabletype>
+			<variablename>flag</variablename>
+			<variablevalue>0</variablevalue>
+		</variable>
+	</variables>
+	<methods>
+		<method>
+			<methodname>onoff</methodname>
+			<code>
+				/*c code for onoff to be copied verbatim */
+				if (valore.toInt()==0){
+					ventilatore[0].valore=255;
+					analogWrite(ventilatore[0].pin,ventilatore[0].valore);
+
+
+				} else {
+					ventilatore[0].valore=0;
+					analogWrite(ventilatore[0].pin,ventilatore[0].valore);
+				}
+			</code>
+		</method>
+		<method>
+			<methodname>velocita</methodname>
+			<code>
+				/*c code for velocita to be copied verbatim */
+				if (valore.toInt()==1){
+					ventilatore[1].valore=0;
+					analogWrite(ventilatore[1].pin,ventilatore[1].valore);
+				} else {
+					ventilatore[1].valore=255;
+					analogWrite(ventilatore[1].pin,ventilatore[1].valore);
+				}
+			</code>
+		</method>
+	</methods>
+</object>
